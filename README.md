@@ -100,13 +100,13 @@ python app.py
 
 | Screen | Preview |
 |--------|---------|
-| Login Page | <img width="1849" height="649" alt="image" src="https://github.com/user-attachments/assets/0f42588b-af0e-4d03-8758-732f2a2bd4d1" /> |
+| Login Page | <img width="1849" height="649" alt="image" src="https://github.com/user-attachments/assets/0f42588b-af0e-4d03-8758-732f2a2bd4d1" />
 
-|Register Page| <img width="1852" height="712" alt="image" src="https://github.com/user-attachments/assets/644ad99b-3fd6-4af2-ae5a-46c896043161" /> |
+| Register Page | <img width="1852" height="712" alt="image" src="https://github.com/user-attachments/assets/644ad99b-3fd6-4af2-ae5a-46c896043161" />
 
-| Dashboard | <img width="1936" height="905" alt="image" src="https://github.com/user-attachments/assets/0668c05a-0fb4-46e6-9393-0dd150fb4d0d" /> |
+| Dashboard | <img width="1936" height="905" alt="image" src="https://github.com/user-attachments/assets/0668c05a-0fb4-46e6-9393-0dd150fb4d0d" />
 
-| Cycle Log | <img width="2440" height="1005" alt="image" src="https://github.com/user-attachments/assets/fb437c57-4aa8-434c-bb82-23dfb3b92979" /> |
+| Cycle Log | <img width="2440" height="1005" alt="image" src="https://github.com/user-attachments/assets/fb437c57-4aa8-434c-bb82-23dfb3b92979" />
 
 ---
 
