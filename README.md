@@ -108,10 +108,6 @@ python app.py
 |--------|---------|
 | Dashboard | <img width="1936" height="905" alt="image" src="https://github.com/user-attachments/assets/0668c05a-0fb4-46e6-9393-0dd150fb4d0d" />
 
-| Screen | Preview |
-|--------|---------|
-| Cycle Log | <img width="2440" height="1005" alt="image" src="https://github.com/user-attachments/assets/fb437c57-4aa8-434c-bb82-23dfb3b92979" />
-
 ---
 
 ## 🔒 Security
