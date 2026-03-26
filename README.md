@@ -1,7 +1,5 @@
 # 🩸 SmartCycle — Period & Fertility Tracker
 
-> **Final Year Project by Anannya Khare & Vanisha Jain | © 2026**
-
 SmartCycle is a web-based menstrual cycle tracking application built with Flask. It helps users log their periods, predict upcoming cycles, identify fertile windows, and track ovulation — all through a clean, intuitive interface.
 
 ---
