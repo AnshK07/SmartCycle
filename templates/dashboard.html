@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4">
+    <h2 class="mb-4">Welcome, <span style="color:var(--pink-primary)">{{ current_user.username }}</span>! 👋</h2>
+    
+    {% if predictions %}
+    <div class="row mb-4">
+        <!-- Current Phase -->
+        <div class="col-md-12 mb-3">
+            <div class="card card-phase">
+                <h5>Current Phase</h5>
+                {% if 'Menstrual' in predictions.phase %}
+                    <span class="phase-badge phase-menstrual">🩸 {{ predictions.phase }}</span>
+                {% elif 'Follicular' in predictions.phase %}
+                    <span class="phase-badge phase-follicular">🌱 {{ predictions.phase }}</span>
+                {% elif 'Ovulation' in predictions.phase %}
+                    <span class="phase-badge phase-ovulation">🌟 {{ predictions.phase }}</span>
+                {% elif 'Luteal' in predictions.phase %}
+                    <span class="phase-badge phase-luteal">🌙 {{ predictions.phase }}</span>
+                {% else %}
+                    <span class="phase-badge phase-default">{{ predictions.phase }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Next Period -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-prediction p-4 text-center">
+                <div class="stat-number">{{ predictions.days_until_next }}</div>
+                <div class="stat-label">Days Until Next Period</div>
+                <p class="mt-2 mb-0"><small class="text-muted">{{ predictions.next_period.strftime('%B %d, %Y') }}</small></p>
+            </div>
+        </div>
+        <!-- Ovulation -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-prediction p-4 text-center">
+                <div class="stat-number">🥚</div>
+                <div class="stat-label">Ovulation Day</div>
+                <p class="mt-2 mb-0"><small class="text-muted">{{ predictions.ovulation_day.strftime('%B %d, %Y') }}</small></p>
+            </div>
+        </div>
+        <!-- Fertile Window -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-prediction p-4 text-center">
+                <div class="stat-number">💫</div>
+                <div class="stat-label">Fertile Window</div>
+                <p class="mt-2 mb-0"><small class="text-muted">{{ predictions.fertile_start.strftime('%b %d') }} – {{ predictions.fertile_end.strftime('%b %d, %Y') }}</small></p>
+            </div>
+        </div>
+    </div>
+
+    {% if predictions.mood %}
+    <div class="card p-3 mt-3">
+        <strong>Latest Mood:</strong> {{ predictions.mood }} &nbsp;|&nbsp;
+        {% if predictions.notes %}<strong>Notes:</strong> {{ predictions.notes }}{% endif %}
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="card p-5 text-center">
+        <h4>No cycle data yet!</h4>
+        <p class="text-muted">Start by logging your first cycle to see predictions.</p>
+        <a href="{{ url_for('log_cycle') }}" class="btn btn-pink">Log Your First Cycle</a>
+    </div>
+    {% endif %}
+
+    <!-- Recent Cycles -->
+    {% if cycles %}
+    <h4 class="mt-5 mb-3">Recent Entries</h4>
+    <div class="table-responsive">
+        <table class="table table-history">
+            <thead>
+                <tr>
+                    <th>Last Period</th>
+                    <th>Cycle Length</th>
+                    <th>Mood</th>
+                    <th>Logged On</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in cycles[:5] %}
+                <tr>
+                    <td>{{ c.last_period.strftime('%B %d, %Y') }}</td>
+                    <td>{{ c.cycle_length }} days</td>
+                    <td>{{ c.mood or '—' }}</td>
+                    <td>{{ c.logged_at.strftime('%b %d, %Y') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4">
+    <h2 class="mb-4" style="color:var(--pink-primary)"><i class="bi bi-clock-history"></i> Cycle History</h2>
+    
+    {% if history_data %}
+    <div class="table-responsive">
+        <table class="table table-history">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Period Start</th>
+                    <th>Cycle Length</th>
+                    <th>Next Period</th>
+                    <th>Ovulation</th>
+                    <th>Fertile Window</th>
+                    <th>Mood</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in history_data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.cycle.last_period.strftime('%b %d, %Y') }}</td>
+                    <td>{{ item.cycle.cycle_length }} days</td>
+                    <td>{{ item.predictions.next_period.strftime('%b %d, %Y') }}</td>
+                    <td>{{ item.predictions.ovulation_day.strftime('%b %d, %Y') }}</td>
+                    <td>{{ item.predictions.fertile_start.strftime('%b %d') }} – {{ item.predictions.fertile_end.strftime('%b %d') }}</td>
+                    <td>{{ item.cycle.mood or '—' }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_cycle', cycle_id=item.cycle.id) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this entry?')">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Summary Stats -->
+    <div class="card p-4 mt-4">
+        <h5>📊 Summary</h5>
+        <p><strong>Total cycles logged:</strong> {{ history_data|length }}</p>
+        {% if history_data|length > 1 %}
+            <p><strong>Average cycle length:</strong> 
+                {{ (history_data | map(attribute='cycle') | map(attribute='cycle_length') | list | sum / history_data|length) | round(1) }} days
+            </p>
+        {% endif %}
+    </div>
+    {% else %}
+    <div class="card p-5 text-center">
+        <h4>No history yet</h4>
+        <p class="text-muted">Log your cycles to build your history.</p>
+        <a href="{{ url_for('log_cycle') }}" class="btn btn-pink">Log Cycle</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <h3 class="text-center mb-4" style="color:var(--pink-primary)"><i class="bi bi-plus-circle"></i> Log New Cycle</h3>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Last Period Start Date</label>
+                        <input type="date" class="form-control" name="last_period" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Cycle Length (days)</label>
+                        <input type="number" class="form-control" name="cycle_length" value="28" min="21" max="35" required>
+                        <small class="text-muted">Typical range: 21–35 days</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mood</label>
+                        <select class="form-select" name="mood">
+                            <option value="">Select mood (optional)</option>
+                            <option value="😊 Happy">😊 Happy</option>
+                            <option value="😐 Neutral">😐 Neutral</option>
+                            <option value="😔 Sad">😔 Sad</option>
+                            <option value="😤 Irritated">😤 Irritated</option>
+                            <option value="😴 Tired">😴 Tired</option>
+                            <option value="🤢 Nauseous">🤢 Nauseous</option>
+                            <option value="💪 Energetic">💪 Energetic</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Notes</label>
+                        <textarea class="form-control" name="notes" rows="3" placeholder="Any symptoms, observations..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-pink w-100">Save Cycle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

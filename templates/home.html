@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1><i class="bi bi-heart-pulse-fill"></i> SmartCycle</h1>
+        <p class="lead mt-3">Your personal menstrual cycle tracker — simple, smart, and private.</p>
+        <p>Track your periods, predict your next cycle, and understand your body better.</p>
+        <div class="mt-4">
+            <a href="{{ url_for('register') }}" class="btn btn-light btn-lg me-2" style="border-radius:25px; font-weight:600;">Get Started</a>
+            <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg" style="border-radius:25px;">Login</a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">📅</div>
+                <h5>Period Prediction</h5>
+                <p class="text-muted">Automatically calculates your next period date based on your cycle data.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">🌸</div>
+                <h5>Fertile Window</h5>
+                <p class="text-muted">Know your ovulation day and fertile window for better planning.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">🔔</div>
+                <h5>Smart Reminders</h5>
+                <p class="text-muted">Get email notifications so you're never caught off guard.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">📊</div>
+                <h5>Cycle History</h5>
+                <p class="text-muted">View and analyze your past cycles to understand patterns.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">😊</div>
+                <h5>Mood Tracking</h5>
+                <p class="text-muted">Log your mood alongside your cycle for deeper insights.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card p-4">
+                <div class="feature-icon">🔒</div>
+                <h5>Private & Secure</h5>
+                <p class="text-muted">Your data stays safe with password-protected accounts.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

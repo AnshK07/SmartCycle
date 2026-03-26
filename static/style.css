@@ -1,0 +1,160 @@
+/* SmartCycle Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --pink-primary: #e91e8c;
+    --pink-light: #f8d7e8;
+    --pink-dark: #b3156b;
+    --purple-accent: #7b2d8e;
+    --bg-cream: #fef7f0;
+    --text-dark: #2d2d2d;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--pink-primary), var(--purple-accent)) !important;
+    box-shadow: 0 2px 10px rgba(233, 30, 140, 0.3);
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--pink-light) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--pink-primary), var(--purple-accent));
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-prediction {
+    background: linear-gradient(135deg, #fff0f6, #f8e8ff);
+    border-left: 4px solid var(--pink-primary);
+}
+
+.card-phase {
+    text-align: center;
+    padding: 20px;
+}
+
+.phase-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.phase-menstrual { background: #ffcdd2; color: #c62828; }
+.phase-follicular { background: #c8e6c9; color: #2e7d32; }
+.phase-ovulation { background: #fff9c4; color: #f57f17; }
+.phase-luteal { background: #e1bee7; color: #6a1b9a; }
+.phase-default { background: #e0e0e0; color: #424242; }
+
+.btn-pink {
+    background: linear-gradient(135deg, var(--pink-primary), var(--pink-dark));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-pink:hover {
+    background: linear-gradient(135deg, var(--pink-dark), var(--purple-accent));
+    color: white;
+    transform: scale(1.02);
+}
+
+.btn-outline-pink {
+    border: 2px solid var(--pink-primary);
+    color: var(--pink-primary);
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+    background: transparent;
+}
+
+.btn-outline-pink:hover {
+    background: var(--pink-primary);
+    color: white;
+}
+
+.form-control:focus {
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 140, 0.25);
+}
+
+.auth-container {
+    max-width: 450px;
+    margin: 60px auto;
+}
+
+.auth-card {
+    border-radius: 20px;
+    padding: 40px;
+    background: white;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--pink-primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.table-history th {
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    border: none;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: var(--text-dark);
+    color: #aaa;
+    padding: 20px 0;
+    margin-top: 60px;
+}
