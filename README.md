@@ -100,9 +100,11 @@ python app.py
 
 | Screen | Preview |
 |--------|---------|
-| Login Page | ![Login](screenshots/login.png) |
-| Dashboard | ![Dashboard](screenshots/dashboard.png) |
-| Cycle Log | ![Cycle Log](screenshots/log_cycle.png) |
+| Login Page | <img width="1849" height="649" alt="image" src="https://github.com/user-attachments/assets/0f42588b-af0e-4d03-8758-732f2a2bd4d1" />|
+|Register Page| <img width="1852" height="712" alt="image" src="https://github.com/user-attachments/assets/644ad99b-3fd6-4af2-ae5a-46c896043161" /> |
+
+| Dashboard | <img width="1936" height="905" alt="image" src="https://github.com/user-attachments/assets/0668c05a-0fb4-46e6-9393-0dd150fb4d0d" /> |
+| Cycle Log | ![Uploading image.png…]() |
 
 ---
 
@@ -113,11 +115,3 @@ python app.py
 - SQL injection prevention through **SQLAlchemy ORM**
 
 ---
-
-## 📄 License
-
-This project is developed for academic purposes as a Final Year Project.
-
----
-
-<p align="center">Made with ❤️ by Anannya Khare & Vanisha Jain</p>
