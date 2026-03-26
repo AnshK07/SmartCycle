@@ -1,56 +1,125 @@
-# SmartCycle: Menstrual Monitoring Web App
+# 🩸 SmartCycle — Period & Fertility Tracker
 
-A web-based menstrual cycle tracking and reminder system built with Python & Flask.
+> **Final Year Project by Anannya Khare & Vanisha Jain | © 2026**
 
-**By:** Final Year College Project
+SmartCycle is a web-based menstrual cycle tracking application built with Flask. It helps users log their periods, predict upcoming cycles, identify fertile windows, and track ovulation — all through a clean, intuitive interface.
 
-## Features
-- User Registration & Login
-- Log period dates & cycle length
-- Auto-calculate next period, ovulation day, fertile window
-- Four-phase tracking (Menstrual, Follicular, Ovulation, Luteal)
-- Mood & notes logging
-- Cycle history with predictions
-- Email reminders (configurable)
+---
 
-## Setup & Run
+## ✨ Features
 
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+- 🔐 **User Authentication** — Secure signup/login with hashed passwords
+- 📅 **Cycle Logging** — Record period start dates and cycle lengths
+- 🔮 **Period Prediction** — Automatically calculates the next expected period
+- 🥚 **Ovulation Tracking** — Pinpoints ovulation day based on cycle data
+- 💚 **Fertile Window** — Highlights the 6-day fertility window
+- 📊 **Cycle Phase Detection** — Identifies current phase (Menstrual, Follicular, Ovulation, Luteal)
+- 📱 **Responsive Design** — Works seamlessly on desktop and mobile
 
-# 2. Run the app
-python app.py
+---
 
-# 3. Open in browser
-# http://127.0.0.1:5000
-```
+## 🛠️ Tech Stack
 
-## Tech Stack
-- **Backend:** Python, Flask
-- **Database:** SQLite
-- **Frontend:** HTML, CSS, Bootstrap 5
-- **Auth:** Flask-Login with password hashing
+| Layer        | Technology                     |
+|-------------|-------------------------------|
+| **Backend**  | Python, Flask                 |
+| **Database** | SQLite via Flask-SQLAlchemy   |
+| **Auth**     | Flask-Login, Werkzeug hashing |
+| **Frontend** | HTML, CSS, Jinja2 Templates   |
 
-## Project Structure
+---
+
+## 📁 Project Structure
+
 ```
 SmartCycle/
-├── app.py              # Main application & routes
-├── models.py           # Database models (User, Cycle)
+├── app.py              # Main application (routes, logic, config)
 ├── requirements.txt    # Python dependencies
-├── templates/          # HTML templates
-│   ├── base.html
-│   ├── home.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── log_cycle.html
-│   └── history.html
-└── static/
-    └── style.css       # Custom styles
+├── instance/
+│   └── smartcycle.db   # SQLite database (auto-generated)
+├── templates/
+│   ├── base.html       # Base layout template
+│   ├── login.html      # Login page
+│   ├── register.html   # Registration page
+│   ├── dashboard.html  # Main dashboard with predictions
+│   └── log_cycle.html  # Cycle logging form
+├── static/
+│   └── style.css       # Custom styles
+└── README.md           # This file
 ```
 
-## Email Reminders
-To enable email reminders, update the SMTP settings in `app.py`:
-- `SENDER_EMAIL`: Your Gmail address
-- `SENDER_PASSWORD`: App-specific password (not your regular password)
+---
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/AnshK07/SmartCycle.git
+cd SmartCycle
+
+# 2. (Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate        # macOS/Linux
+venv\Scripts\activate           # Windows
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+python app.py
+
+# 5. Open in browser
+# Navigate to http://127.0.0.1:5000
+```
+
+---
+
+## 🔑 Core Logic
+
+| Calculation       | Formula                                    |
+|-------------------|--------------------------------------------|
+| **Next Period**   | `last_period_date + cycle_length`          |
+| **Ovulation Day** | `next_period_date - 14 days`               |
+| **Fertile Window**| `ovulation_day - 5` to `ovulation_day`     |
+
+### Cycle Phases
+- **Menstrual** — Days 1–5 from period start
+- **Follicular** — Day 6 to ovulation
+- **Ovulation** — Ovulation day ± 1
+- **Luteal** — Post-ovulation to next period
+
+---
+
+## 📸 Screenshots
+
+> _Add your screenshots here_
+
+| Screen | Preview |
+|--------|---------|
+| Login Page | ![Login](screenshots/login.png) |
+| Dashboard | ![Dashboard](screenshots/dashboard.png) |
+| Cycle Log | ![Cycle Log](screenshots/log_cycle.png) |
+
+---
+
+## 🔒 Security
+
+- Passwords are hashed using **Werkzeug** (never stored in plaintext)
+- Session-based authentication via **Flask-Login**
+- SQL injection prevention through **SQLAlchemy ORM**
+
+---
+
+## 📄 License
+
+This project is developed for academic purposes as a Final Year Project.
+
+---
+
+<p align="center">Made with ❤️ by Anannya Khare & Vanisha Jain</p>
